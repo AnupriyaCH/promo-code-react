@@ -1,12 +1,48 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+---
 
-Currently, two official plugins are available:
+# 🟢 Q1 – Promo Code Generator
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### 📖 Problem
+Our national retail client has a 200-store branch network.  
 
-## Expanding the ESLint configuration
+Requirements:
+- Each store issues up to 10,000 customer codes/day  
+- The promo code must:
+  - Be **≤ 9 characters**
+  - Encode:
+    - Store ID
+    - Date
+    - Transaction number (1..10,000 per day)
+  - Be human-friendly (easy to type, hard to cheat)  
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+### 💻 Implementation
+We use **Base36 encoding** to keep codes short.  
+
+- **Generate Code**: `(storeId + date + transactionId) → promoCode`  
+- **Decode Code**: `promoCode → storeId, date, transactionId`  
+
+---
+
+
+
+---
+
+### ▶️ Run Instructions
+1. Install dependencies: npm install
+2. Run development server: npm run dev
+3. Enter:
+   - Store ID  
+   - Date (YYYYMMDD)  
+   - Transaction Number  
+4. Click **Generate** → you get a promo code  
+5. Paste a promo code and click **Decode** → details are revealed  
+
+## Screenshot
+
+![App Screenshot](./1)
+![App Screenshot](./2)
+![App Screenshot](./3)
+![App Screenshot](./)
