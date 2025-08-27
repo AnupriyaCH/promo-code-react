@@ -42,7 +42,7 @@ We use **Base36 encoding** to keep codes short.
 
 ## Screenshot
 
-![App Screenshot](./1)
-![App Screenshot](./2)
-![App Screenshot](./3)
+![App Screenshot](./1.png)
+![App Screenshot](./2.png)
+![App Screenshot](./3.png)
 
